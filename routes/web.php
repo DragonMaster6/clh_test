@@ -19,5 +19,6 @@ Route::name('app.')->group(function() {
     Route::name('patients.')->prefix('/patients')->group(function() {
         Route::get('/', Pages\Patients::class)->name('index');
         Route::get('/new', Pages\Patients\Form::class)->name('new');
+        Route::get('/{patient}', Pages\Patients\Form::class)->name('edit');
     });
 });

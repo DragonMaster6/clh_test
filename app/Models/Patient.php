@@ -27,10 +27,11 @@ class Patient extends Model
      * Each patient has multiple blood pressure readings
      */
     public function bp_records() {
-        return $this->hasMany(
-            "App\Models\BpRecord",
-            "id",
-            "patient_id"
-        );
+        // return $this->hasMany(
+        //     "App\Models\BpRecord",
+        //     "id",
+        //     "patient_id"
+        // );
+        return $this->hasMany(\App\Models\BpRecord::class);
     }
 }

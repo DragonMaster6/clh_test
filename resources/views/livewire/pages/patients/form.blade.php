@@ -1,6 +1,18 @@
 <div>
     @if (!empty($patient->id))
     <h1> Modifying {{ $patient->fullname }} </h1>
+    <div x-data="{ showBpModal:false }">
+        <button x-on:click="showBpModal = true"> Enter Blood Pressure </button>
+        @if (session()->has('message'))
+        <div>
+            {{ session('message') }}
+        </div>
+        @endif
+        <div x-show="showBpModal">
+            This is the modal to get a blood pressure reading
+            <livewire:components.bp-record.form :patient="$patient"/>
+        </div>
+    </div>
     @else
     <h1> Creating New Patient </h1>
     @endif

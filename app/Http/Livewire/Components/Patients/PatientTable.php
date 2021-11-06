@@ -22,6 +22,10 @@ class PatientTable extends DataTableComponent
         ];
     }
 
+    public function getTableRowUrl($row): string {
+        return route('app.patients.edit', $row);
+    }
+
     public function query(): Builder {
         return Patient::query();   
     }
