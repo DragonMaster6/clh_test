@@ -12,10 +12,12 @@
         <!-- Styles -->
         @livewireStyles
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
     </head>
-    <body class="antialiased">
-       
+    <body>
+        @yield('page-content')
         @livewireScripts
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
