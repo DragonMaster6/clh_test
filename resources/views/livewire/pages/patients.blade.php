@@ -13,6 +13,9 @@
         <button type="button">
             Create New Patient
         </button>
+        <a href="{{ route('app.patients.new') }}">
+            Create New Patient
+        </a>
     </div>
 
     <!-- Data table -->
