@@ -16,8 +16,10 @@
             [x-cloak] { display: none !important; }
         </style>
     </head>
-    <body>
-        @yield('page-content')
+    <body class="bg-gray-100 h-screen">
+        <div class="w-4/5 mx-auto bg-blue-400 rounded-lg p-8 h-full">
+            @yield('page-content')
+        </div>
         @livewireScripts
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

@@ -1,25 +1,27 @@
 <div>
     @if (!empty($patient->id))
-    <h1> Modifying {{ $patient->fullname }} </h1>
+    <h1 class="text-5xl mb-4"> Modifying {{ $patient->fullname }} </h1>
     <div x-data="{ showBpModal:false }">
-        <button x-on:click="showBpModal = true"> Enter Blood Pressure </button>
+        <button x-on:click="showBpModal = true"
+            class="border py-2 px-4 bg-gray-100">
+            Enter Blood Pressure
+        </button>
         @if (session()->has('message'))
         <div>
             {{ session('message') }}
         </div>
         @endif
         <div x-show="showBpModal">
-            This is the modal to get a blood pressure reading
             <livewire:components.bp-record.form :patient="$patient"/>
         </div>
     </div>
     @else
-    <h1> Creating New Patient </h1>
+    <h1 class="text-5xl mb-4"> Creating New Patient </h1>
     @endif
 
     <form wire:submit.prevent="savePatient">
         <!-- First Name -->
-        <div>
+        <div class="my-2">
             <label for="first-name"> First Name </label>
             <input type="text"
                 id="first-name"
@@ -30,7 +32,7 @@
         </div>
 
         <!-- Last Name -->
-        <div>
+        <div class="my-2">
             <label for="last-name"> Last Name </label>
             <input type="text"
                 id="last-name"
@@ -41,7 +43,7 @@
         </div>
 
         <!-- Birthdate -->
-        <div>
+        <div class="my-2">
             <label for="birth-date"> Birthdate </label>
             <input type="date"
                 id="birth-date"
@@ -52,7 +54,7 @@
         </div>
 
         <!-- Gender -->
-        <div>
+        <div class="my-2">
             <label> Gender </label>
             <input type="radio" name="gender[]" id="gender-male" value="M"
                 wire:model.defer="patient.gender">
@@ -68,7 +70,7 @@
         </div>
 
         <!-- SSN -->
-        <div>
+        <div class="my-2">
             <label for="ssn"> SSN </label>
             <input type="text"
                 id="ssn"
@@ -79,7 +81,7 @@
         </div>
 
         <!-- Phone Number -->
-        <div>
+        <div class="my-2">
             <label for="phone"> Phone Number </label>
             <input type="text"
                 id="phone"
@@ -90,7 +92,7 @@
         </div>
 
         <!-- Email -->
-        <div>
+        <div class="my-2">
             <label for="email"> Email </label>
             <input type="email"
                 id="email"
@@ -101,11 +103,12 @@
         </div>
 
         <!-- Actions -->
-        <div>
-            <a href="{{ route('app.patients.index') }}">
+        <div class="my-2">
+            <a href="{{ route('app.patients.index') }}"
+                class="border py-2 px-3 mr-3 bg-gray-300">
                 Cancel
             </a>
-            <button>
+            <button class="py-2 px-3 bg-green-300">
                 Save
             </button>
         </div>

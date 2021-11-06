@@ -1,19 +1,13 @@
 <div>
-    <h1> Patient List </h1>
+    <h1 class="text-5xl"> Patient List </h1>
     
-    <p>
+    <p class="my-4">
         To enter a blood pressure reading for a patient, locate and modify the patient below, then click "Enter Blood Pressure"
     </p>
 
     <!-- Page Actions -->
-    <div>
-        <button type="button">
-            Download CSV
-        </button>
-        <button type="button">
-            Create New Patient
-        </button>
-        <a href="{{ route('app.patients.new') }}">
+    <div class="my-4">
+        <a href="{{ route('app.patients.new') }}" class="border py-2 px-4 bg-gray-100">
             Create New Patient
         </a>
     </div>

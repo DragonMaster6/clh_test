@@ -1,6 +1,6 @@
 <form wire:submit.prevent="saveRecord">
     <!-- Systolic Reading -->
-    <div>
+    <div class="py-2">
         <label for="systolic"> Systolic </label>
         <input type="number" id="systolic" wire:model.defer="record.systolic">
         @error('record.systolic')
@@ -9,7 +9,7 @@
     </div>
 
     <!-- Diastolic Reading -->
-    <div>
+    <div class="py-2">
         <label for="diastolic"> Diatolic </label>
         <input type="number" id="diastolic" wire:model.defer="record.diastolic">
         @error('record.diastolic')
@@ -18,7 +18,7 @@
     </div>
 
     <!-- Beat per Minute Reading -->
-    <div>
+    <div class="py-2">
         <label for="bpm"> BPM </label>
         <input type="number" id="bpm" wire:model.defer="record.bpm">
         @error('record.bpm')
@@ -27,8 +27,8 @@
     </div>
 
     <!-- Actions -->
-    <div>
-        <button>
+    <div class="py-2">
+        <button class="border py-2 px-4 bg-green-300">
             Submit
         </button>
     </div>
